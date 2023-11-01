@@ -40,7 +40,8 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 # Install compatible Osmosis to help users import sample data in a new instance
-RUN curl -OL https://github.com/openstreetmap/osmosis/releases/download/0.47.2/osmosis-0.47.2.tgz \
+# RUN curl -OL https://github.com/openstreetmap/osmosis/releases/download/0.47.2/osmosis-0.47.2.tgz \
+RUN curl -OL http://117.34.118.31:10000/Software/temp/osmosis-0.47.2.tgz \
  && tar -C /usr/local -xzf osmosis-0.47.2.tgz
 
 ENV DEBIAN_FRONTEND=dialog

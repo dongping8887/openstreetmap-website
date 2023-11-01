@@ -52,6 +52,8 @@ WORKDIR /app
 
 # Install Ruby packages
 ADD Gemfile Gemfile.lock /app/
+# 更换官方源为中国源
+RUN bundle config mirror.https://rubygems.org https://gems.ruby-china.com
 RUN bundle install
 
 # Install NodeJS packages using yarn
